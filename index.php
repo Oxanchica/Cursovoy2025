@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body><?php
-        include "pgAccess.php";
-        $conn = new pgAccess;
-        $conn -> host_name = "localhost";
-        $conn -> user_name = "postgres";
-        $conn -> password = "postgres";
-        $conn -> dn_name = "applicationSystem";
+    <head>
+    <?php
+        include "pgApplicationSystemAccess.php";
+        $conn = new pgApplicationSystemAccess;
         echo $conn -> connect()."\n";
         // $conn -> issue_query();
-        // while($row = $conn -> fetch_row())
+        // while($row = $conn -> fetch_array())
         //     echo $row[0]."\n";
-        $conn -> disconnect();
-    ?></body>
+    ?></head>
+    <body></body>
 </html>
