@@ -1,0 +1,48 @@
+body{
+    margin-left: -3px;
+}
+
+h1{
+    align-items: center;
+    color: white;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 10px;
+    background-color: blue;
+}
+
+main{
+    margin: 100px 400px;
+}
+
+form{
+    height: 50px;
+    display: flex;
+}
+
+input{
+    border: solid blue;
+    flex-grow: 1;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 10px;
+    background-color:blue;
+    color: white;
+}
+
+a{
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+    color:hotpink;
+}
