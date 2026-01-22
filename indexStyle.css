@@ -3,7 +3,6 @@ body{
 }
 
 h1{
-    align-items: center;
     color: white;
 }
 
@@ -16,17 +15,38 @@ header{
 }
 
 main{
-    margin: 100px 400px;
+    margin: 150px 400px;
 }
 
-form{
-    height: 50px;
+.searchForm{
+    height: 40px;
     display: flex;
+    margin: 30px auto;
 }
 
 input{
+    margin: 5px;
     border: solid blue;
+    flex-grow: 6;
+}
+
+.searchField{
+    margin: 0;
+}
+
+.searchButton{
     flex-grow: 1;
+    margin: 0;
+    cursor: pointer;
+}
+
+.reason{
+    width: 100%;
+    min-height: 90px;
+}
+
+th{
+    font-size: larger;
 }
 
 footer{
@@ -45,4 +65,8 @@ a{
 a:hover{
     text-decoration: none;
     color:hotpink;
+}
+
+.name{
+    width: 100%;
 }

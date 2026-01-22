@@ -16,3 +16,22 @@ h1{
     margin: 200px auto auto;
     font-size: xx-large;
 }
+
+.signature{
+    display: flexbox;
+}
+
+.date{
+    vertical-align: bottom;
+    flex-grow: 4;
+    margin-right: 50%;
+}
+
+.img_name{
+    flex-grow: 1;
+}
+
+img{
+    width: 160px;
+    height: 100px;
+}
