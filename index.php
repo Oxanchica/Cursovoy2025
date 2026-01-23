@@ -7,7 +7,9 @@
         include "doc\DBAccess\pgApplicationSystemAccess.php";
         $conn = new pgApplicationSystemAccess;
         $conn -> connect();
-        $conn -> issue_query("SELECT id, simple_address FROM application_system.yard_camcorders WHERE simple_address LIKE ? UNION SELECT id, simple_address FROM application_system.entrance_camcorders WHERE simple_address LIKE ?", ["%".$_GET["address"]."%", "%".$_GET["address"]."%"]);
+        $conn -> issue_query(
+            "SELECT id, simple_address FROM application_system.yard_camcorders WHERE simple_address LIKE ? UNION SELECT id, simple_address FROM application_system.entrance_camcorders WHERE simple_address LIKE ?",
+            ["%".$_GET["address"]."%", "%".$_GET["address"]."%"]);
     ?>
     <title>Система формирования заявлений на продление хранения данных с камер</title>
     <link rel="stylesheet" href="indexStyle.css">
@@ -27,7 +29,7 @@
 
         <form enctype="multipart/form-data" method="post" action="doc\doc.php" class="view">
             <p>Для сохранения документа откройте его и нажмите Ctrl+S или шёлкните по нему правой кнопкой мыши и выберите нужный вариант.</p>
-            <input type="text" name="name" placeholder="ФИО" class="name"><br>
+            <input type="text" name="name" placeholder="от кого" class="name"><br>
             <span>За период </span><label for="dateFrom"> c </label><input type="datetime-local" name="dateFrom" id="dateFrom">
             <label for="dateTo">по </label><input type="datetime-local" name="dateTo" id="dateTo"><br>
             <input type="textarea" name="reason" placeholder="Причина запроса информации" class="reason"><br>

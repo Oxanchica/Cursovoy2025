@@ -28,7 +28,27 @@
 </head>
 
 <body>
-    <header>Начальнику городской<br>системы видеонаблюдения<br>г. Москвы<br>от <?=$_POST['name']?></header>
+    <header>Начальнику городской<br>системы видеонаблюдения<br>г. Москвы<br>от <?php
+    if(isset($_POST['name']))
+        $name = $_POST['name'];
+    if(strlen($name) > 23){
+        $nameParts = explode(' ', $name);
+        $name = $nameParts[0];
+        for($i = 1; $i < count($nameParts); $i++){
+            if(strlen($name.$nameParts[$i]) <= 40)
+                $name .= ' '.$nameParts[$i];
+            else{
+                while($i < count($nameParts)){
+                    $secName .= $nameParts[$i].' ';
+                    $i++;
+                }
+                break;
+            }
+        }
+    }
+    echo $name.'<br>'.$secName;
+    ?></header>
+
     <h1>Заявление</h1>
     <main><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Прошу продлить хранение видеозаписей с камер городского видеонаблюдения, установленных по адресам 
